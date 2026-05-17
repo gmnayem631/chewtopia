@@ -10,7 +10,11 @@ const getFoods = async () => {
 
 const FoodsPage = async () => {
   const foods = await getFoods();
-  return <div className="">Total {foods.length} foods found</div>;
+  return (
+    <div className="">
+      <h2 className="font-bold text-4xl">Total {foods.length} foods found</h2>
+    </div>
+  );
 };
 
 export default FoodsPage;
