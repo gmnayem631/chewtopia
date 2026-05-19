@@ -1,7 +1,9 @@
 // FoodCard.jsx
 
+import Link from "next/link";
+
 const FoodCard = ({ food }) => {
-  const { title, foodImg, price, category } = food;
+  const { id, title, foodImg, price, category } = food;
 
   return (
     <div className="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition duration-300">
@@ -34,9 +36,12 @@ const FoodCard = ({ food }) => {
             Add to Cart
           </button>
 
-          <button className="flex-1 border border-orange-500 text-orange-500 hover:bg-orange-50 py-2 rounded-xl font-medium transition">
+          <Link
+            href={`/foods/${id}`}
+            className="flex-1 text-center border border-orange-500 text-orange-500 hover:bg-orange-50 py-2 rounded-xl font-medium transition"
+          >
             View Details
-          </button>
+          </Link>
         </div>
       </div>
     </div>
