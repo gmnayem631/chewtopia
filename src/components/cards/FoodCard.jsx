@@ -1,6 +1,7 @@
 // FoodCard.jsx
 
 import Link from "next/link";
+import AddToCart from "../buttons/AddToCart";
 
 const FoodCard = ({ food }) => {
   const { id, title, foodImg, price, category } = food;
@@ -32,10 +33,7 @@ const FoodCard = ({ food }) => {
 
         {/* Buttons */}
         <div className="flex gap-3 pt-2">
-          <button className="flex-1 bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-xl font-medium transition">
-            Add to Cart
-          </button>
-
+          <AddToCart food={food}></AddToCart>
           <Link
             href={`/foods/${id}`}
             className="flex-1 text-center border border-orange-500 text-orange-500 hover:bg-orange-50 py-2 rounded-xl font-medium transition"
