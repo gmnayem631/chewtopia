@@ -1,5 +1,6 @@
 // components/cards/ReviewCard.jsx
 
+import Image from "next/image";
 import React from "react";
 
 const ReviewCard = ({ reviewData }) => {
@@ -9,12 +10,18 @@ const ReviewCard = ({ reviewData }) => {
     <div className="bg-white rounded-2xl shadow-md border border-gray-100 p-6 space-y-5 hover:shadow-xl transition duration-300">
       {/* User Info */}
       <div className="flex items-center gap-4">
-        <img
+        {/* <img
           src={photo}
           alt={user}
           className="w-14 h-14 rounded-full object-cover border"
+        /> */}
+        <Image
+          src={photo}
+          alt={user}
+          className="rounded-full object-cover border"
+          width={56}
+          height={56}
         />
-
         <div>
           <h2 className="text-lg font-bold text-gray-800">{user}</h2>
 

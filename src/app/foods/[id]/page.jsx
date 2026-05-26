@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 const getSingleFood = async (id) => {
@@ -23,11 +24,18 @@ const page = async ({ params }) => {
     <div className="max-w-3xl mx-auto px-5 py-10">
       <div className="bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100">
         {/* Image */}
-        <div className="w-full h-[400px] overflow-hidden">
-          <img
+        <div className="w-full h-100 overflow-hidden">
+          {/* <img
             src={food.foodImg}
             alt={food.title}
             className="w-full h-full object-cover"
+          /> */}
+          <Image
+            src={food.foodImg}
+            alt={food.title}
+            className="object-cover"
+            width={300}
+            height={300}
           />
         </div>
 
