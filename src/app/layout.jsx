@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import CartProvider from "@/context/CartProvider";
@@ -14,6 +14,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const inter = Inter({
+  weight: ["400"],
+});
+
 export const metadata = {
   title: { default: "All Foods", template: "%s | Chewtopia" },
   description: "Best Fast Food in Dhaka",
@@ -21,10 +25,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${inter.className} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <header className="px-5 py-2 flex justify-between items-center gap-5 bg-stone-800">
           <Link href={"/"}>
