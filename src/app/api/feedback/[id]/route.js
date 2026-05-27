@@ -8,5 +8,5 @@ export async function GET(request, { params }) {
   if (!singleFeedback) {
     return Response.json({ message: "Not found" }, { status: 404 });
   }
+  return Response.json(singleFeedback);
 }
-return Response.json(singleFeedback);
