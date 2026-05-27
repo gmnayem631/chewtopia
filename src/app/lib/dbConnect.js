@@ -12,11 +12,11 @@ const client = new MongoClient(uri, {
     deprecationErrors: true,
   },
 });
-const clientPromise = client.connect();
+// const clientPromise = client.connect();
 
 export const connect = async (collection) => {
-  const connectedClient = await clientPromise;
-  // const database = process.env.DB_NAME;
-  // return client.db(database).collection(collection);
-  return connectedClient.db(process.env.DB_NAME).collection(collection);
+  // const connectedClient = await clientPromise;
+  const database = process.env.DB_NAME;
+  return client.db(database).collection(collection);
+  // return connectedClient.db(process.env.DB_NAME).collection(collection);
 };

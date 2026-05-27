@@ -1,7 +1,7 @@
 import { connect } from "@/app/lib/dbConnect";
 
 export async function GET(request) {
-  const feedbackCollection = connect("feedbacks");
+  const feedbackCollection = await connect("feedbacks");
   const result = await feedbackCollection.find().toArray();
   return Response.json(result);
 }
